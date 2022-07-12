@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(BoxCollider2D))]
+//커서 변경이 필요한 오브젝트 스크립트에 MomoBehaviour 대신 Clickable을 입력하면 class가 상속받아 커서가 변경된다.
+//그리고 Clickable에 MonoBehaviour가 상속 받으므로 상관없다.
+public class Clickable : MonoBehaviour
+{
+    public void OnMouseEnter() 
+    {
+        CursorController.instance.Clickable();  
+    }
+
+    public void OnMouseExit() 
+    {
+        CursorController.instance.Default();
+    }
+}
